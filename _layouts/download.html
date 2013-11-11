@@ -1,0 +1,99 @@
+---
+layout: default
+name: download
+---
+
+<div class="row">
+  <div class="span6">
+    <h4>Command Line Tools</h4>
+    <p>
+      The jeo command line tools. Packages are available for the platforms listed below. 
+    </p>
+    <ul class="nav nav-tabs">
+      <li><a href="#mac" data-toggle="tab">Mac</a></li>
+      <li><a href="#linux" data-toggle="tab">Linux</a></li>
+      <li><a href="#other" data-toggle="tab">Other</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h4>Library Files</h4>
+    <p>
+      All the the library files for jeo and its dependencies. 
+      <ul class="inline">
+        <li>
+           <i class="icon-download"></i>
+           <a href="{{site.download_url}}/{{site.version}}/jeo-{{site.version}}-lib.zip">jeo-{{site.version}}-lib.zip</a>
+        </li>
+      </ul>
+    </p>
+  </div>
+</div>  
+
+<div class="tab-content">
+  <div class="tab-pane" id="mac">
+Mac users can install with <a href="http://brew.sh">Homebrew</a>.
+
+{% highlight bash %}
+$ brew install jeo
+{% endhighlight %}
+  </div>
+
+  <div class="tab-pane" id="linux">
+
+    <h4>Ubuntu</h4>
+Ubuntu users can install with <a href="https://help.ubuntu.com/community/AptGet/Howto">apt</a>.
+Start by adding the jeo apt repository. The following commands must be run as 
+<b>root</b>.
+
+{% highlight bash %}
+$ wget -q0- http://apt.opengeo.org/gpg.key | apt-key add - 
+$ echo "deb http://apt.opengeo.org/jeo/ubuntu" > /etc/apt/sources.list.d/jeo.list
+{% endhighlight %}
+
+Then install the jeo package.
+
+{% highlight bash %}
+$ apt-get update
+$ apt-get install jeo
+{% endhighlight %}
+
+<h4>Fedora/CentOS/Redhat</h4>
+
+RPM based distro users can install with <a href="https://fedoraproject.org/wiki/Yum">yum</a>. Start by adding the jeo yum repository for your distro. The following
+commands must be run as <b>root</b>.
+
+Fedora distros:
+
+{% highlight bash %}
+$ wget http://yum.opengeo.org/jeo/fedora/jeo.repo -o /etc/yum.repos.d/jeo.repo
+{% endhighlight %}
+
+CentOS/RedHat distros:
+
+{% highlight bash %}
+$ wget http://yum.opengeo.org/jeo/centos/jeo.repo -o /etc/yum.repos.d/jeo.repo
+{% endhighlight %}
+
+Then install the <b>jeo</b> package.
+
+{% highlight bash %}
+$ yum install jeo
+{% endhighlight %}
+
+Upon successful installation the <code>jeo</code> command should be available.
+
+{% highlight bash %}
+$ jeo --version
+{% endhighlight %}
+
+  </div>
+  
+  <div class="tab-pane" id="other">
+    <p>
+      <i class="icon-download"></i> <a href="{{site.download_url}}/{{site.version}}/jeo-{{site.version}}-cli.zip">jeo-{{site.version}}-cli.zip</a> 
+    </p>
+    <p>
+    Download and unpack the platform independent package. Add the <code>bin</code> directory to the <code>PATH</code>.
+  </div>
+  
+</div>
