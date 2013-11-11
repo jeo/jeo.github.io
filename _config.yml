@@ -2,6 +2,6 @@ name: jeo
 markdown: rdiscount
 pygments: true
 
-download_url: http://ares.boundlessgeo.com/jeo/release
+download_url: http://ares.boundlessgeo.com/jeo
 version: 0.1
 
