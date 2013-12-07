@@ -9,7 +9,7 @@ name: index
 ## A lightweight spatial library for the JVM
 
 <p class="lead">
-  jeo is a spatial library written in Java that provides low level geospatial capabilities.
+  jeo is a spatial library written in Java that provides low level geospatial capabilities
 </p>
 
 
