@@ -66,7 +66,7 @@ resolvers += "opengeo" at "http://repo.opengeo.org"
 And then declare the library dependency no jeo.
 
 {% highlight scala %}
-libraryDependencies += "org.jeo" % "jeo" % "0.1"
+libraryDependencies += "org.jeo" % "jeo" % "{{site.version}}"
 {% endhighlight  %}
 
 ## Next Steps
