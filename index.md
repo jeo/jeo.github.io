@@ -29,7 +29,7 @@ Schema schema = Schema.build("towns").field("location", Point.class).schema();
 
 // create a postgis dataset
 Workspace pg = PostGIS.open(new PostGISOpts("jeo"));
-Cursor<Feature> c = g.create(schema).cursor(new Query().append());
+Cursor<Feature> c = pg.create(schema).cursor(new Query().append());
 
 // add the point
 Feature town = c.next();
