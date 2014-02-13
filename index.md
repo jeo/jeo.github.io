@@ -19,7 +19,7 @@ name: index
 Point p = Geom.point(-115.37, 51.08);
 
 // reproject it
-p = Proj.reproject("epsg:4326", "epsg:900913");
+p = Proj.reproject(p, "epsg:4326", "epsg:900913");
 
 // turn it into GeoJSON
 String json = Geom.json(p);
