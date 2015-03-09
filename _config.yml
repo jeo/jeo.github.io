@@ -1,7 +1,9 @@
 name: jeo
 markdown: rdiscount
-pygments: true
+highlighter: pygments
+host: 0.0.0.0
+download_url: http://github.com/jeo
+doc_url: http://jeo.readthedocs.org/en/stable
+version: 0.5
 
-download_url: http://ares.boundlessgeo.com/jeo
-version: 0.3
 

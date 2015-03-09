@@ -1,100 +1,205 @@
 ---
 layout: default
 name: download
+oracle_url: http://www.oracle.com/technetwork/java/javase/downloads/
 ---
 
-<div class="row">
-  <div class="span6">
-    <h4>Command Line Tools</h4>
-    <p>
-      The jeo command line tools. Packages are available for the platforms listed below. 
-    </p>
-    <ul class="nav nav-tabs">
-      <li><a href="#mac" data-toggle="tab">Mac</a></li>
-      <li><a href="#linux" data-toggle="tab">Linux</a></li>
-      <li><a href="#other" data-toggle="tab">Other</a></li>
+<section>
+  <h4 class="section-title">
+    <span>Library Files</span>
+    <hr/>
+  </h4>
+  <p>
+    All the the jar files for jeo and its dependencies.
+    <ul class="inline">
+      <li>
+         <i class="icon-arrow-down"></i>
+         <a href="{{site.download_url}}/jeo/releases/download/{{site.version}}/jeo-{{site.version}}-lib.zip">jeo-{{site.version}}-lib.zip</a>
+      </li>
     </ul>
-  </div>
-  <div class="span6">
-    <h4>Library Files</h4>
-    <p>
-      All the the library files for jeo and its dependencies. 
-      <ul class="inline">
+
+    Alternatively the library can be obtained using a build tool like Maven or Gradle. See the 
+    <a href="{{site.doc_url}}/getting-started.html">docs</a> for more details.
+  </p>
+</section>
+<section>
+  <h4 class="section-title">
+    <span>Command Line Tools</span> <hr/>
+  </h4>
+  <p>
+    The jeo command line tools. Packages are available for a number of platforms.
+    <div class="text-center">
+      <ul class="nav nav-pills" role="tablist">
+        <li class="active">
+          <a href="#osx" role="tab" data-toggle="tab">
+            <i class="pic-os-osx-dark"></i> Mac
+          </a>
+        </li>
         <li>
-           <i class="icon-download"></i>
-           <a href="{{site.download_url}}/release/{{site.version}}/jeo-{{site.version}}-lib.zip">jeo-{{site.version}}-lib.zip</a>
+          <a href="#ubuntu" role="tab" data-toggle="tab">
+            <i class="pic-lin-ubuntu"></i> Ubuntu
+          </a>
+        </li>
+        <li>
+          <a href="#centos" role="tab" data-toggle="tab">
+            <i class="pic-lin-centos"></i> CentOS
+          </a>
+        </li>
+        <li>
+          <a href="#fedora" role="tab" data-toggle="tab">
+            <i class="pic-lin-fedora"></i> Fedora
+          </a>
+        </li>
+        <li>
+          <a href="#windows" role="tab" data-toggle="tab">
+            <i class="pic-os-win-03"></i> Windows
+          </a>
         </li>
       </ul>
-    </p>
-  </div>
-</div>  
-
-<div class="tab-content">
-  <div class="tab-pane" id="mac">
-Mac users can install with <a href="http://brew.sh">Homebrew</a>.
-
-{% highlight bash %}
+    </div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="osx">
+        <p>
+          Mac users can install with <a href="http://brew.sh">Homebrew</a>.
+        </p>
+        <ol>
+          <li>
+            <p>
+            Tap and install with <tt>brew</tt>
+            </p>
+            {% highlight bash %}
 $ brew tap jeo/jeo
 $ brew install jeo
-{% endhighlight %}
-  </div>
-
-  <div class="tab-pane" id="linux">
-
-    <h4>Ubuntu</h4>
-Ubuntu users can install with <a href="https://help.ubuntu.com/community/AptGet/Howto">apt</a>.
-Start by adding the jeo apt repository. The following commands must be run as 
-<b>root</b>.
-
-{% highlight bash %}
-$ wget -q0- http://apt.opengeo.org/gpg.key | apt-key add - 
-$ echo "deb http://apt.opengeo.org/jeo/ubuntu" > /etc/apt/sources.list.d/jeo.list
-{% endhighlight %}
-
-Then install the jeo package.
-
-{% highlight bash %}
-$ apt-get update
-$ apt-get install jeo
-{% endhighlight %}
-
-<h4>Fedora/CentOS/Redhat</h4>
-
-RPM based distro users can install with <a href="https://fedoraproject.org/wiki/Yum">yum</a>. Start by adding the jeo yum repository for your distro. The following
-commands must be run as <b>root</b>.
-
-Fedora distros:
-
-{% highlight bash %}
-$ wget http://yum.opengeo.org/jeo/fedora/jeo.repo -o /etc/yum.repos.d/jeo.repo
-{% endhighlight %}
-
-CentOS/RedHat distros:
-
-{% highlight bash %}
-$ wget http://yum.opengeo.org/jeo/centos/jeo.repo -o /etc/yum.repos.d/jeo.repo
-{% endhighlight %}
-
-Then install the <b>jeo</b> package.
-
-{% highlight bash %}
-$ yum install jeo
-{% endhighlight %}
-
-Upon successful installation the <code>jeo</code> command should be available.
-
-{% highlight bash %}
+            {% endhighlight %}
+          </li>
+          <li>
+            <p>
+            Run it.
+            {% highlight bash %}
 $ jeo --version
-{% endhighlight %}
+            {% endhighlight %}
+            </p>
+          </li>
+        </ol>
+        <p>
+          See the <a href="{{site.doc_url}}/cli/install.html#mac-osx">docs</a> for additional notes 
+          about installation on osx.
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="ubuntu">
+        <p>
+          Ubuntu packages are available for precise and trusty 64 bit.
+          <ol>
+            <li>
+              <p>
+              Download <a href="{{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo_{{site.version}}_amd64.deb">jeo_{{site.version}}_amd64.deb</a> and install with <tt>dpkg</tt>
+              </p>
+              {% highlight bash %}
+$ wget {{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo_{{site.version}}_amd64.deb
+$ sudo dpkg -i jeo_{{site.version}}_amd64.deb
+              {% endhighlight %}
+            </li>
+            <li>
+              <p>
+              Run it.
+              {% highlight bash %}
+  $ jeo --version
+              {% endhighlight %}
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+        See the <a href="{{site.doc_url}}/cli/install.html#ubuntu">docs</a> for additional notes 
+        about installation on Ubuntu.
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="centos">
+        <p>
+          RPM packages are available for CentOS 6 64 bit.
+          <ol>
+            <li>
+              <p>
+              Download <a href="{{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo-{{site.version}}-1.el6.x86_64.rpm">jeo-{{site.version}}-1.el6.x86_64.rpm</a> and install with <tt>rpm</tt>:
+              </p>
+      {% highlight bash %}
+$ wget {{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo-{{site.version}}-1.el6.x86_64.rpm
+$ sudo rpm -ivh jeo-{{site.version}}-1.el6.x86_64.rpm
+      {% endhighlight %}
+            </li>
+            <li>
+              <p>
+              Run it.
+              {% highlight bash %}
+$ jeo --version
+              {% endhighlight %}
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+        See the <a href="{{site.doc_url}}/cli/install.html#centos">docs</a> for additional notes about installation on CentOS.
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="fedora">
+        <p>
+          RPM packages are available for Fedora 21+ 64 bit.
+          <ol>
+            <li>
+              <p>
+              Download <a href="{{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo-{{site.version}}-1.fc21.x86_64.rpm">jeo-{{site.version}}-1.fc21.x86_64.rpm</a> and install with <tt>rpm</tt>:
+              </p>
+      {% highlight bash %}
+$ wget {{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo-{{site.version}}-1.fc21.x86_64.rpm
+$ sudo rpm -ivh jeo-{{site.version}}-1.fc21.x86_64.rpm
+      {% endhighlight %}
+            </li>
+            <li>
+              <p>
+              Run it.
+              {% highlight bash %}
+$ jeo --version
+              {% endhighlight %}
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+        See the <a href="{{site.doc_url}}/cli/install.html#fedora">docs</a> for additional notes about installation on Fedora.
+        </p>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="windows">
+        <p>
+        No native packaging is available for Windows at this time. However jeo can be installed manually 
+        on Windows via the platform independent archive.
+        </p>
+        <ol>
+          <li>
+            <p>
+            Ensure a Java 8 runtime is installed. Installers can be downloaded from <a href="{{page.oracle_url}}">Oracle</a>. Ensure java is on the Windows <tt>PATH</tt> or set the <tt>JAVA_HOME</tt> environment variable.
+            </p>
+          </li>
+          <li>
+            <p>
+            Download and unpack <a href="{{site.download_url}}/jeo-cli/releases/download/{{site.version}}/jeo-{{site.version}}-cli.zip">jeo-{{site.version}}-cli.zip</a>
+            </p>
+          </li>
+          <li>
+            <p>
+            Updated the Windows <tt>PATH</tt> to include the <tt>bin</tt> directory from the unpacked archive.
+            </p>
+          </li>
+          <li>
+            <p>
+            Run it.
+            {% highlight batch %}
+$ jeo --version
+            {% endhighlight %}
+            </p>
+            </li>
+        </ol>
+      </div>
+    </div>
 
-  </div>
-  
-  <div class="tab-pane" id="other">
-    <p>
-      <i class="icon-download"></i> <a href="{{site.download_url}}/release/{{site.version}}/jeo-{{site.version}}-cli.zip">jeo-{{site.version}}-cli.zip</a> 
-    </p>
-    <p>
-    Download and unpack the platform independent package. Add the <code>bin</code> directory to the <code>PATH</code>.
-  </div>
-  
-</div>
+  </p>
+</section>
